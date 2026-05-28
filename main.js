@@ -128,6 +128,24 @@ function showResult(){
 
   resultSection.style.display = "flex";
 
+
+  // If number greater than 100
+if(guessedNumber > 100){
+
+  finalNumber.innerHTML =
+    "⚠️<br>You thought of a number greater than 100";
+
+  return;
+}
+
+// If number less than 1
+if(guessedNumber === 0){
+
+  finalNumber.innerHTML =
+    "⚠️<br>You thought of a number less than 1";
+
+  return;
+}
   // Reset animation number
   finalNumber.textContent = "0";
 
