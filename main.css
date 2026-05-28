@@ -690,9 +690,9 @@ button{
     padding:10px 4px;
   }
 
-  .buttons{
+  /* .buttons{
     flex-direction:column;
-  }
+  } */
 
   .yes-btn,
   .no-btn{
