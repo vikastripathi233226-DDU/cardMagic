@@ -788,3 +788,57 @@ button{
   }
 
 }
+
+/* =========================================
+   CREDIT FOOTER
+========================================= */
+
+.credit{
+
+  margin-top:30px;
+
+  font-size:.95rem;
+
+  letter-spacing:.5px;
+
+  color:rgba(255,255,255,.75);
+
+  text-align:center;
+
+  animation:fadeCredit 2s ease;
+}
+
+.credit span{
+
+  color:#ffb3ff;
+
+  font-weight:600;
+
+  text-shadow:0 0 12px #d26cff;
+}
+
+@keyframes fadeCredit{
+
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* Mobile */
+
+@media screen and (max-width:768px){
+
+  .credit{
+    font-size:.82rem;
+    margin-top:22px;
+    line-height:1.6;
+  }
+
+}
