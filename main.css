@@ -1,0 +1,790 @@
+/* =========================================
+   MAGIC MIND READER WEBSITE
+   COMPLETE PROFESSIONAL RESPONSIVE CSS
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  font-size:16px;
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  width:100%;
+  overflow-x:hidden;
+  overflow-y:auto;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:30px 15px;
+
+  background:#050816;
+  color:white;
+
+  font-family:'Poppins',sans-serif;
+
+  position:relative;
+}
+
+/* =========================================
+   BACKGROUND ANIMATION
+========================================= */
+
+.bg-animation{
+  position:fixed;
+  inset:0;
+
+  width:200%;
+  height:200%;
+
+  background:
+    radial-gradient(circle,#7b2cff33 1px,transparent 1px);
+
+  background-size:40px 40px;
+
+  animation:bgMove 18s linear infinite;
+
+  opacity:.5;
+
+  z-index:0;
+}
+
+@keyframes bgMove{
+
+  0%{
+    transform:translate(0,0);
+  }
+
+  100%{
+    transform:translate(-200px,-200px);
+  }
+
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container{
+  width:100%;
+  max-width:900px;
+
+  margin:auto;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  position:relative;
+  z-index:2;
+}
+
+/* =========================================
+   TOP GLOW EFFECT
+========================================= */
+
+.top-glow{
+  position:absolute;
+
+  top:-100px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:260px;
+  height:260px;
+
+  background:#7b2cff;
+
+  filter:blur(120px);
+
+  opacity:.45;
+
+  z-index:-1;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title{
+  font-size:4rem;
+
+  line-height:1.2;
+
+  font-family:'Cinzel',serif;
+
+  margin-bottom:15px;
+
+  text-shadow:0 0 25px #b56cff;
+
+  animation:titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow{
+
+  from{
+    text-shadow:0 0 10px #b56cff;
+  }
+
+  to{
+    text-shadow:0 0 35px #ff9dff;
+  }
+
+}
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle{
+  font-size:1.15rem;
+
+  line-height:1.7;
+
+  max-width:700px;
+
+  margin-bottom:35px;
+
+  opacity:.9;
+}
+
+.subtitle span{
+  color:#d38cff;
+  font-weight:700;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button{
+  border:none;
+  outline:none;
+
+  cursor:pointer;
+
+  font-family:'Poppins',sans-serif;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* Start + Restart */
+
+.start-btn,
+.restart-btn{
+
+  padding:16px 40px;
+
+  border-radius:50px;
+
+  background:linear-gradient(135deg,#7b2cff,#ca4bff);
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:600;
+
+  transition:.35s ease;
+
+  box-shadow:0 0 25px #7d2cff88;
+}
+
+.start-btn:hover,
+.restart-btn:hover{
+
+  transform:translateY(-5px) scale(1.03);
+
+  box-shadow:0 0 35px #c64dff;
+}
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden{
+  display:none;
+}
+
+/* =========================================
+   GAME SECTION
+========================================= */
+
+#gameSection{
+  width:100%;
+  margin-top:25px;
+}
+
+/* =========================================
+   PROGRESS AREA
+========================================= */
+
+.progress-area{
+  width:100%;
+  max-width:800px;
+
+  margin:0 auto 10px auto;
+}
+
+.progress-text{
+  margin-bottom:10px;
+
+  font-size:1rem;
+  font-weight:600;
+}
+
+.progress-bar{
+  width:100%;
+  height:12px;
+
+  background:#1f2340;
+
+  border-radius:30px;
+
+  overflow:hidden;
+}
+
+#progressFill{
+  width:0%;
+  height:100%;
+
+  background:linear-gradient(to right,#7b2cff,#ff65f2);
+
+  border-radius:30px;
+
+  transition:.5s ease;
+}
+
+/* =========================================
+   CARD CONTAINER
+========================================= */
+
+.card-container{
+  width:100%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  margin-top:30px;
+
+  perspective:1000px;
+}
+
+/* =========================================
+   MAGIC CARD
+========================================= */
+
+.magic-card{
+
+  width:100%;
+  max-width:820px;
+
+  margin:auto;
+
+  padding:30px;
+
+  border-radius:28px;
+
+  background:rgba(255,255,255,.06);
+
+  border:1px solid rgba(255,255,255,.1);
+
+  backdrop-filter:blur(12px);
+
+  box-shadow:0 10px 40px rgba(0,0,0,.45);
+
+  animation:fadeIn .6s ease;
+}
+
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+    transform:translateY(40px) rotateX(10deg);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) rotateX(0);
+  }
+
+}
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.card-title{
+  font-size:1.7rem;
+  font-weight:600;
+
+  color:#ffc8ff;
+
+  margin-bottom:28px;
+}
+
+/* =========================================
+   NUMBERS GRID
+========================================= */
+
+.numbers-grid{
+
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(70px,1fr));
+
+  gap:12px;
+
+  justify-content:center;
+  align-items:center;
+}
+
+/* =========================================
+   NUMBER BOX
+========================================= */
+
+.number-box{
+
+  padding:12px 8px;
+
+  border-radius:12px;
+
+  background:rgba(255,255,255,.08);
+
+  font-size:1rem;
+  font-weight:600;
+
+  transition:.3s ease;
+}
+
+.number-box:hover{
+
+  transform:scale(1.08);
+
+  background:#7d2cff;
+}
+
+/* =========================================
+   YES NO BUTTONS
+========================================= */
+
+.buttons{
+
+  width:100%;
+
+  margin-top:30px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+}
+
+.yes-btn,
+.no-btn{
+
+  padding:14px 34px;
+
+  border-radius:40px;
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:600;
+
+  transition:.3s ease;
+}
+
+.yes-btn{
+
+  background:#00c853;
+
+  box-shadow:0 0 20px #00c85388;
+}
+
+.no-btn{
+
+  background:#ff1744;
+
+  box-shadow:0 0 20px #ff174488;
+}
+
+.yes-btn:hover,
+.no-btn:hover{
+
+  transform:translateY(-4px);
+}
+
+/* =========================================
+   RESULT SECTION
+========================================= */
+
+.result-section{
+
+  width:100%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  margin-top:35px;
+}
+
+/* =========================================
+   RESULT BOX
+========================================= */
+
+.result-box{
+
+  width:100%;
+  max-width:700px;
+
+  margin:auto;
+
+  padding:50px 30px;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,.07);
+
+  border:1px solid rgba(255,255,255,.1);
+
+  animation:resultPop .8s ease;
+}
+
+@keyframes resultPop{
+
+  from{
+    opacity:0;
+    transform:scale(.6);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+
+}
+
+.result-box h2{
+
+  font-size:2.3rem;
+
+  margin-bottom:20px;
+
+  color:#ffcbff;
+}
+
+/* =========================================
+   FINAL NUMBER
+========================================= */
+
+.final-number{
+
+  font-size:6rem;
+  font-weight:700;
+
+  margin-bottom:15px;
+
+  color:white;
+
+  text-shadow:0 0 30px #c86cff;
+}
+
+/* =========================================
+   RESULT TEXT
+========================================= */
+
+.result-text{
+
+  font-size:1.1rem;
+
+  line-height:1.7;
+
+  margin-bottom:30px;
+
+  opacity:.9;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media screen and (max-width:992px){
+
+  body{
+    padding:25px 15px;
+  }
+
+  .title{
+    font-size:3rem;
+  }
+
+  .subtitle{
+    font-size:1.05rem;
+  }
+
+  .numbers-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .final-number{
+    font-size:5rem;
+  }
+
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media screen and (max-width:768px){
+
+  body{
+    padding:20px 10px;
+    align-items:center;
+  }
+
+  .container{
+    width:100%;
+  }
+
+  .top-glow{
+    width:180px;
+    height:180px;
+    top:-40px;
+  }
+
+  .title{
+    font-size:2.2rem;
+    margin-bottom:12px;
+  }
+
+  .subtitle{
+    font-size:.95rem;
+    margin-bottom:24px;
+  }
+
+  #gameSection{
+    margin-top:20px;
+  }
+
+  .card-container{
+    margin-top:20px;
+  }
+
+  .magic-card{
+    padding:22px 16px;
+    border-radius:24px;
+  }
+
+  .card-title{
+    font-size:1.3rem;
+    margin-bottom:20px;
+  }
+
+  .numbers-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+  }
+
+  .number-box{
+    padding:13px 5px;
+    font-size:.95rem;
+  }
+
+  .buttons{
+    gap:14px;
+    margin-top:24px;
+  }
+
+  .yes-btn,
+  .no-btn{
+
+    flex:1;
+
+    min-width:130px;
+
+    padding:14px 10px;
+
+    font-size:.95rem;
+  }
+
+  .result-box{
+    padding:35px 18px;
+    border-radius:24px;
+  }
+
+  .result-box h2{
+    font-size:1.7rem;
+  }
+
+  .final-number{
+    font-size:4rem;
+  }
+
+  .result-text{
+    font-size:.95rem;
+  }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width:480px){
+
+  html{
+    font-size:15px;
+  }
+
+  body{
+    padding:15px 8px;
+  }
+
+  .title{
+    font-size:1.9rem;
+  }
+
+  .subtitle{
+    font-size:.88rem;
+  }
+
+  .magic-card{
+    padding:18px 12px;
+  }
+
+  .card-title{
+    font-size:1.05rem;
+  }
+
+  .numbers-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:8px;
+  }
+
+  .number-box{
+    font-size:.85rem;
+    padding:10px 4px;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  .yes-btn,
+  .no-btn{
+    width:100%;
+    font-size:.9rem;
+  }
+
+  .result-box{
+    padding:30px 15px;
+  }
+
+  .result-box h2{
+    font-size:1.4rem;
+  }
+
+  .final-number{
+    font-size:3.2rem;
+  }
+
+  .result-text{
+    font-size:.85rem;
+  }
+
+}
+
+/* =========================================
+   EXTRA SMALL DEVICES
+========================================= */
+
+@media screen and (max-width:340px){
+
+  .title{
+    font-size:1.5rem;
+  }
+
+  .subtitle{
+    font-size:.8rem;
+  }
+
+  .numbers-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .number-box{
+    font-size:.8rem;
+  }
+
+  .final-number{
+    font-size:2.7rem;
+  }
+
+}
+
+/* =========================================
+   SHORT HEIGHT DEVICES
+========================================= */
+
+@media screen and (max-height:700px){
+
+  body{
+    align-items:flex-start;
+  }
+
+  .container{
+    margin:auto;
+  }
+
+}
+
+/* =========================================
+   TOUCH DEVICE FIX
+========================================= */
+
+@media (hover:none){
+
+  .number-box:hover,
+  .start-btn:hover,
+  .restart-btn:hover,
+  .yes-btn:hover,
+  .no-btn:hover{
+    transform:none;
+  }
+
+  .number-box:active{
+    transform:scale(.96);
+  }
+
+  .start-btn:active,
+  .restart-btn:active,
+  .yes-btn:active,
+  .no-btn:active{
+    transform:scale(.97);
+  }
+
+}

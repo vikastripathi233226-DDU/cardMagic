@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mind Reader Magic</title>
+
+  <link rel="stylesheet" href="main.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-animation"></div>
+
+  <div class="container">
+
+    <div class="top-glow"></div>
+
+    <h1 class="title">✨ Mind Reader Magic ✨</h1>
+
+    <p class="subtitle">
+      Think of any number between <span>1</span> and <span>100</span>...
+      <br>
+      I will read your mind 🔮
+    </p>
+
+    <button id="startBtn" class="start-btn">
+      Start The Magic
+    </button>
+
+    <div id="gameSection" class="hidden">
+
+      <div class="progress-area">
+        <div class="progress-text">
+          Card <span id="cardNumber">1</span> of 7
+        </div>
+
+        <div class="progress-bar">
+          <div id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="card-container">
+
+        <div class="magic-card" id="magicCard">
+
+          <div class="card-title">
+            Is Your Number Here?
+          </div>
+
+          <div id="numbersGrid" class="numbers-grid"></div>
+
+          <div class="buttons">
+            <button id="yesBtn" class="yes-btn">
+              ✅ YES
+            </button>
+
+            <button id="noBtn" class="no-btn">
+              ❌ NO
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="resultSection" class="result-section hidden" style="display: none;">
+
+      <div class="result-box">
+
+        <h2>🔮 I Read Your Mind 🔮</h2>
+
+        <div class="final-number" id="finalNumber">
+          0
+        </div>
+
+        <p class="result-text">
+          This is the number you were thinking of 😎
+        </p>
+
+        <button id="restartBtn" class="restart-btn">
+          Play Again
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
