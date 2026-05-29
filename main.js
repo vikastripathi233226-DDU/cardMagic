@@ -133,7 +133,7 @@ function showResult(){
 if(guessedNumber > 100){
 
   finalNumber.innerHTML =
-    "⚠️<br>You thought of a number greater than 100";
+    "⚠️<br>You are not playing properly";
 
   return;
 }
@@ -142,7 +142,7 @@ if(guessedNumber > 100){
 if(guessedNumber === 0){
 
   finalNumber.innerHTML =
-    "⚠️<br>You thought of a number less than 1";
+    "⚠️<br>You thought of a number out of range";
 
   return;
 }
