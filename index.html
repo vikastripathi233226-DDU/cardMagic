@@ -1,105 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mind Reader Magic</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="main.css" />
+    <!-- Primary SEO Meta Tags -->
+    <title>Mind Reader: Binary Card Magic | Guessing Your Number 1-100</title>
+    <meta
+      name="description"
+      content="Think of a secret number between 1 and 100. Answer Yes or No for 7 magic cards, and watch the binary algorithm guess your exact number instantly!"
+    />
+    <meta
+      name="keywords"
+      content="binary card magic, number guessing game, mind reader trick, 7 cards magic, math magic tricks, binary mind reader, 1 to 100 number guess, interactive magic website, coding puzzle game"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Vikas Tripathi" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
+    <!-- Open Graph / Facebook (Jab link WhatsApp/Social Media par share karoge) -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Mind Reader: Interactive 7-Card Binary Magic Game"
+    />
+    <meta
+      property="og:description"
+      content="Think of a number from 1 to 100. Answer 7 simple questions and let the magic guess your secret number instantly!"
+    />
+    <meta
+      property="og:image"
+      content="https://techrepo.in/assets/magic-preview.jpg"
+    />
+    <!-- Yeh standard dummy image link hai, jab domain final ho toh change kar sakte ho -->
 
-  <div class="bg-animation"></div>
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Binary Card Magic: The Ultimate Mind Reader"
+    />
+    <meta
+      name="twitter:description"
+      content="Can 7 cards guess your secret number between 1 and 100? Try this amazing interactive math magic puzzle now!"
+    />
 
-  <div class="container">
+    <!-- Google Structured Data / Schema Markup (Isse Google ise official Game ki tarah index karega) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Binary Card Magic Number Guesser",
+        "description": "An interactive math magic game that guesses your secret number between 1 and 100 using 7 binary cards and yes/no logic.",
+        "genre": "Puzzle, Educational, Magic, Mind Reader",
+        "applicationCategory": "Game",
+        "operatingSystem": "All",
+        "author": {
+          "@type": "Person",
+          "name": "Vikas Tripathi"
+        }
+      }
+    </script>
+    <link rel="icon" href="/assets/cardmagicFavicon.ico">
+    <link rel="stylesheet" href="main.css" />
 
-    <div class="top-glow"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <h1 class="title">✨ Mind Reader Magic ✨</h1>
+  <body>
+    <div class="bg-animation"></div>
 
-    <p class="subtitle">
-      Think of any number between <span>1</span> and <span>100</span>...
-      <br>
-      I will read your mind 🔮
-    </p>
+    <div class="container">
+      <div class="top-glow"></div>
 
-    <button id="startBtn" class="start-btn">
-      Start The Magic
-    </button>
+      <h1 class="title">✨ Mind Reader Magic ✨</h1>
 
+      <p class="subtitle">
+        Think of any number between <span>1</span> and <span>100</span>...
+        <br />
+        I will read your mind 🔮
+      </p>
 
+      <button id="startBtn" class="start-btn">Start The Magic</button>
 
-    <div id="gameSection" class="hidden">
-
-      <div class="progress-area">
-        <div class="progress-text">
-          Card <span id="cardNumber">1</span> of 7
-        </div>
-
-        <div class="progress-bar">
-          <div id="progressFill"></div>
-        </div>
-      </div>
-
-      <div class="card-container">
-
-        <div class="magic-card" id="magicCard">
-
-          <div class="card-title">
-            Is Your Number Here?
+      <div id="gameSection" class="hidden">
+        <div class="progress-area">
+          <div class="progress-text">
+            Card <span id="cardNumber">1</span> of 7
           </div>
 
-          <div id="numbersGrid" class="numbers-grid"></div>
-
-          <div class="buttons">
-            <button id="yesBtn" class="yes-btn">
-              ✅ YES
-            </button>
-
-            <button id="noBtn" class="no-btn">
-              ❌ NO
-            </button>
+          <div class="progress-bar">
+            <div id="progressFill"></div>
           </div>
-
         </div>
 
-      </div>
+        <div class="card-container">
+          <div class="magic-card" id="magicCard">
+            <div class="card-title">Is Your Number Here?</div>
 
-    </div>
+            <div id="numbersGrid" class="numbers-grid"></div>
 
-    <div id="resultSection" class="result-section hidden" style="display: none;">
+            <div class="buttons">
+              <button id="yesBtn" class="yes-btn">✅ YES</button>
 
-      <div class="result-box">
-
-        <h2>🔮 I Read Your Mind 🔮</h2>
-
-        <div class="final-number" id="finalNumber">
-          0
+              <button id="noBtn" class="no-btn">❌ NO</button>
+            </div>
+          </div>
         </div>
-
-        <p class="result-text">
-          This is the number you were thinking of 😎
-        </p>
-
-        <button id="restartBtn" class="restart-btn">
-          Play Again
-        </button>
-
       </div>
 
+      <div
+        id="resultSection"
+        class="result-section hidden"
+        style="display: none"
+      >
+        <div class="result-box">
+          <h2>🔮 I Read Your Mind 🔮</h2>
+
+          <div class="final-number" id="finalNumber">0</div>
+
+          <p class="result-text">This is the number you were thinking of 😎</p>
+
+          <button id="restartBtn" class="restart-btn">Play Again</button>
+        </div>
+      </div>
+
+      <div class="credit">
+        Designed & Developed By
+        <span>Shalini Dubey</span> ✨
+      </div>
     </div>
 
-    <div class="credit">
-  Designed & Developed By 
-  <span>Shalini Dubey</span> ✨
-</div>
-
-  </div>
-
-  <script src="main.js"></script>
-
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

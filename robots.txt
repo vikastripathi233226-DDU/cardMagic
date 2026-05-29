@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cardmagic-8zh.pages.dev/sitemap.xml
